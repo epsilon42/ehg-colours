@@ -1,0 +1,94 @@
+.App {
+  position: relative;
+  font-family: "Press Start 2P", cursive;
+  background: #333;
+  height: 100vh;
+  width: 100vw;
+}
+.Controls {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  // width: 300px;
+  // height: 320px;
+  z-index: 1;
+  padding-bottom: 2rem;
+  button,
+  input {
+    font-family: "Press Start 2P", cursive;
+    padding: 4px 8px;
+  }
+  input {
+    font-size: 2rem;
+    text-align: center;
+  }
+  button {
+    outline: none;
+    &.selected {
+      background: black;
+      color: white;
+      border-color: white;
+    }
+  }
+}
+.Image {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+
+  &.GradientMethod {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(128, 1fr);
+  }
+  &.DivMethod {
+    grid-template-columns: repeat(256, 1fr);
+    grid-template-rows: repeat(128, 1fr);
+
+    .Pixel {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &.SvgMethod {
+    .SvgBackground {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      transition: 2s all ease-in-out;
+    }
+  }
+
+  &.OriginalSize {
+    &.GradientMethod {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(128, 1fr);
+      width: 256px;
+      height: 128px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &.DivMethod {
+      grid-template-columns: repeat(256, 1px);
+      grid-template-rows: repeat(128, 1px);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: auto;
+    }
+    &.SvgMethod {
+      .SvgBackground {
+        background-size: 256px 128px;
+      }
+    }
+  }
+}
