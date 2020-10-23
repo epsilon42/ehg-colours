@@ -8,7 +8,6 @@ const Controls = ({
   setMethod,
   fullScreen,
   setFullScreen,
-  generateNewImage,
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
