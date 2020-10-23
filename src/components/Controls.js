@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "./Button";
 
 const Controls = ({
   modifier,
@@ -9,6 +10,8 @@ const Controls = ({
   setFullScreen,
   generateNewImage,
 }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleModifierValueInputChange = (e) => {
     if (e.target.value > 99) {
       setModifier(99);
@@ -20,57 +23,63 @@ const Controls = ({
   };
 
   return (
-    <div className="Controls">
-      <div>
-        <h3>Modifier:</h3>
-        <input
-          type="number"
-          value={modifier}
-          min="1"
-          max="99"
-          onChange={handleModifierValueInputChange}
-          maxLength="2"
-        ></input>
+    <>
+      <div className="ControlsMenuButton">
+        <Button
+          title={"Options"}
+          selectedCondition={menuOpen}
+          selectedText={"Close"}
+          onClick={() => setMenuOpen(!menuOpen)}
+        />
       </div>
+      <div className={`Controls ${menuOpen ? "show" : "hide"}`}>
+        <div>
+          <h3>Modifier (1-99):</h3>
+          <input
+            type="number"
+            value={modifier}
+            min="1"
+            max="99"
+            onChange={handleModifierValueInputChange}
+            maxLength="2"
+            size="3"
+          ></input>
+        </div>
 
-      <div>
-        <h3>Method:</h3>
-        <button
-          className={`${method === "gradient" ? "selected" : ""}`}
-          onClick={() => setMethod("gradient")}
-        >
-          CSS Gradient
-        </button>
-        <button
-          className={`${method === "div" ? "selected" : ""}`}
-          onClick={() => setMethod("div")}
-        >
-          DIV Elements
-        </button>
-        <button
-          className={`${method === "svg" ? "selected" : ""}`}
-          onClick={() => setMethod("svg")}
-        >
-          SVG Base64
-        </button>
-      </div>
+        <div>
+          <h3>Method:</h3>
+          <Button
+            title={"CSS Gradient"}
+            selectedCondition={method === "gradient"}
+            onClick={() => setMethod("gradient")}
+          />
+          <Button
+            title={"Div Elements"}
+            selectedCondition={method === "div"}
+            onClick={() => setMethod("div")}
+          />
+          <Button
+            title={"SVG Base64"}
+            selectedCondition={method === "svg"}
+            onClick={() => setMethod("svg")}
+          />
+        </div>
 
-      <div>
-        <h3>Full Screen:</h3>
-        <button
-          className={`${fullScreen ? "selected" : ""}`}
-          onClick={() => setFullScreen(true)}
-        >
-          Enable
-        </button>
-        <button
-          className={`${!fullScreen ? "selected" : ""}`}
-          onClick={() => setFullScreen(false)}
-        >
-          Disable
-        </button>
+        <div>
+          <h3>Full Screen:</h3>
+          <Button
+            title={"Enable"}
+            selectedCondition={fullScreen}
+            onClick={() => setFullScreen(true)}
+          />
+          <Button
+            title={"Disable"}
+            selectedCondition={!fullScreen}
+            onClick={() => setFullScreen(false)}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

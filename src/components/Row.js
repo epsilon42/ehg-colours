@@ -4,10 +4,10 @@ const Row = ({ row }) => {
   function generateBackgroundString(row) {
     let backgroundString = `linear-gradient(90deg, `;
     for (let i = 0; i < row.length; i++) {
-      backgroundString += `rgba(${row[i][0]},${row[i][1]},${row[i][2]}) ${
+      backgroundString += `rgb(${row[i][0]},${row[i][1]},${row[i][2]}) ${
         (i / row.length) * 100
       }%,`;
-      backgroundString += `rgba(${row[i][0]},${row[i][1]},${row[i][2]}) ${
+      backgroundString += `rgb(${row[i][0]},${row[i][1]},${row[i][2]}) ${
         ((i + 1) / row.length) * 100
       }%,`;
     }

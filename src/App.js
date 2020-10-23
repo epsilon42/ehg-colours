@@ -12,12 +12,14 @@ function App() {
   const [method, setMethod] = useState("gradient");
   const [fullScreen, setFullScreen] = useState(true);
 
+  const colorArray = generateAllColors();
+
   useEffect(() => {
     generateNewImage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modifier]);
 
   const generateNewImage = (e) => {
-    let colorArray = generateAllColors();
     let colorArrayPatterned = generatePattern(colorArray, modifier).filter(
       (e) => e.length
     );
@@ -50,7 +52,7 @@ function App() {
           }[fullScreen]
         }`}
       >
-        {/* CSS Gradient method - best performance but has anti aliasing/blur issue on Chrome */}
+        {/* CSS Gradient method - best performance but has anti aliasing/blur issue on Chrome-based browsers */}
         {method === "gradient" &&
           calculatedArray &&
           calculatedArray.map((row, index) => <Row row={row} key={index} />)}
@@ -62,7 +64,7 @@ function App() {
             arrChunk.map((color, index) => <Pixel color={color} key={index} />)
           )}
 
-        {/* SVG Base64 method - good performance, able to use CSS transitions */}
+        {/* SVG Base64 method - good performance, able to use CSS transitions in Chrome-based browsers */}
         {method === "svg" && calculatedArray && (
           <SvgImage calculatedArray={calculatedArray} />
         )}

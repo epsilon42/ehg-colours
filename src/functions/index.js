@@ -82,3 +82,12 @@ export function renderSvg(array) {
 function convertSvgStringToBase64(svgString) {
   return "data:image/svg+xml;base64," + window.btoa(svgString);
 }
+
+// // Converting to hex causes slow down when generating image
+// function numberToHex(number) {
+//   let hexValue = number.toString(16);
+//   if (hexValue.length === 1) {
+//     hexValue = `0${hexValue}`;
+//   }
+//   return hexValue;
+// }
