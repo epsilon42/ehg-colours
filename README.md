@@ -2,6 +2,9 @@
 
 Ann app that generates an image based on 32,768 colour combinations using each colour only once.
 
+**Live demo:**
+https://epsilon42.github.io/ehg-colours/
+
 ![](ehg-colours.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
