@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ehg-colours/static/css/main.70652729.chunk.css",
+    "main.js": "/ehg-colours/static/js/main.da120066.chunk.js",
+    "main.js.map": "/ehg-colours/static/js/main.da120066.chunk.js.map",
+    "runtime-main.js": "/ehg-colours/static/js/runtime-main.511db598.js",
+    "runtime-main.js.map": "/ehg-colours/static/js/runtime-main.511db598.js.map",
+    "static/js/2.fc853ef5.chunk.js": "/ehg-colours/static/js/2.fc853ef5.chunk.js",
+    "static/js/2.fc853ef5.chunk.js.map": "/ehg-colours/static/js/2.fc853ef5.chunk.js.map",
+    "index.html": "/ehg-colours/index.html",
+    "precache-manifest.f7369113e315de84bd48c0cf8df160dd.js": "/ehg-colours/precache-manifest.f7369113e315de84bd48c0cf8df160dd.js",
+    "service-worker.js": "/ehg-colours/service-worker.js",
+    "static/css/main.70652729.chunk.css.map": "/ehg-colours/static/css/main.70652729.chunk.css.map",
+    "static/js/2.fc853ef5.chunk.js.LICENSE.txt": "/ehg-colours/static/js/2.fc853ef5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.511db598.js",
+    "static/js/2.fc853ef5.chunk.js",
+    "static/css/main.70652729.chunk.css",
+    "static/js/main.da120066.chunk.js"
+  ]
+}
